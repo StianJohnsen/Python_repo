@@ -1,6 +1,7 @@
 def check_duplicates(string):
     word_list = string.split()
     word_counter = -1
+    duplicated_words_list = []
 
     for word in word_list:
         word_counter += 1
@@ -9,7 +10,11 @@ def check_duplicates(string):
             if letters.lower() not in letters_list:
                 letters_list.append(letters.lower())
             else:
-                return (f'The word: {word_list[word_counter]} has duplicate letters')
+                duplicated_words_list.append(word_list[word_counter])
+    if len(duplicated_words_list) != 0:
+        return [x for x in duplicated_words_list]
+    else:
+        return False
             
         
 
@@ -17,4 +22,4 @@ def check_duplicates(string):
 
 
 #print (check_duplicates("Hello world"))
-print(check_duplicates("Lasse Stian Mariurs"))
+print(check_duplicates("Lase Stian Marius"))
